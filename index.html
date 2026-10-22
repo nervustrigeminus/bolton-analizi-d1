@@ -1,0 +1,1194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none}
+    span.s2 {font: 12.0px 'Times New Roman'; font-kerning: none}
+    span.s3 {font: 12.0px 'Zapf Dingbats'; font-kerning: none}
+    span.s4 {font: 12.0px 'Apple Symbols'; font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="tr"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;title&gt;OrthoMetrics - Bolton ve Yer Darlığı Analiz Portalı&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>tailwind.config = {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>darkMode: 'class',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>theme: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>extend: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>fontFamily: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>sans: ['"Plus Jakarta Sans"', 'sans-serif'],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>mono: ['"JetBrains Mono"', 'monospace'],</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>colors: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>clinic: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>50: '#f0fdfa',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>100: '#ccfbf1',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>500: '#14b8a6',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>600: '#0d9488',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>700: '#0f766e',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>dark: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>bg: '#0B1120',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>card: '#151F32',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>input: '#1E293B',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>border: '#334155',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>input[type=number]::-webkit-inner-spin-button,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>input[type=number]::-webkit-outer-spin-button {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>-webkit-appearance: none;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>margin: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>input[type=number] {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>-moz-appearance: textfield;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.custom-scrollbar::-webkit-scrollbar {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>width: 6px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>height: 6px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.custom-scrollbar::-webkit-scrollbar-track {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background: #0f172a;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.custom-scrollbar::-webkit-scrollbar-thumb {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background: #334155;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>border-radius: 9999px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.custom-scrollbar::-webkit-scrollbar-thumb:hover {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background: #475569;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>@media print {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>body {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>background-color: #ffffff !important;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>color: #0f172a !important;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>.no-print {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>display: none !important;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>.print-shadow-none {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>box-shadow: none !important;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>border: 1px solid #cbd5e1 !important;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>background: #ffffff !important;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>color: #0f172a !important;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>input {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>border-bottom: 1px solid #000 !important;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>background: transparent !important;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>color: #000 !important;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body class="bg-dark-bg text-slate-100 font-sans min-h-screen antialiased flex flex-col selection:bg-teal-500 selection:text-white"&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- Header --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-40"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-wrap items-center justify-between gap-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="flex items-center gap-3"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-teal-500 to-cyan-400 flex items-center justify-center shadow-lg shadow-teal-500/20 text-slate-950 font-bold"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;svg class="w-6 h-6 text-slate-950" fill="none" viewBox="0 0 24 24" stroke="currentColor"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/svg&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="flex items-center gap-2"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h1 class="text-lg font-extrabold tracking-tight text-white"&gt;OrthoMetrics&lt;/h1&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-teal-500/10 text-teal-400 border border-teal-500/20"&gt;Staj &amp; Klinik Vaka Aracı&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;p class="text-xs text-slate-400"&gt;Bolton Analiz Motoru &amp; Ark Boyutu Diskrepans (Yer Darlığı) Hesaplayıcı&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;!-- Aksiyon Butonları --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="flex items-center gap-2 no-print"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button id="btnLoadExample" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-teal-500/10 text-teal-300 hover:bg-teal-500/20 border border-teal-500/30 transition shadow-sm active:scale-95"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/&gt;&lt;/svg&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>Örnek Vaka Yükle (Excel)</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button id="btnClear" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 border border-slate-700 transition active:scale-95"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/&gt;&lt;/svg&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>Sıfırla</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button id="btnPrint" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 border border-slate-700 transition active:scale-95"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4H7v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/&gt;&lt;/svg&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>Yazdır / PDF</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button id="btnCopyReport" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-500/20 text-emerald-300 hover:bg-emerald-500/30 border border-emerald-500/30 transition active:scale-95"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/&gt;&lt;/svg&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>Raporu Kopyala</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/header&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- Bildirim Kutusu (Toast) --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none bg-teal-500 text-slate-950 px-4 py-2.5 rounded-lg shadow-xl font-semibold text-xs flex items-center gap-2"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/&gt;&lt;/svg&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;span id="toastMsg"&gt;İşlem başarılı&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- Ana Kapsayıcı --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 w-full flex-1"&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- Üst Vaka Bilgi Satırı --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="mb-6 p-4 rounded-xl bg-dark-card border border-slate-800 shadow-sm flex flex-wrap items-center justify-between gap-4 no-print"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="flex flex-wrap items-center gap-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;label class="block text-[11px] font-medium text-slate-400 mb-1"&gt;Hasta / Model No&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;input type="text" id="patientCode" placeholder="Örn: Vaka #1042" class="px-2.5 py-1 text-xs rounded-md bg-dark-input border border-slate-700 text-slate-200 focus:outline-none focus:border-teal-500 w-36"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;label class="block text-[11px] font-medium text-slate-400 mb-1"&gt;Stajyer Hekim&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;input type="text" id="dentistName" placeholder="Ad Soyad" class="px-2.5 py-1 text-xs rounded-md bg-dark-input border border-slate-700 text-slate-200 focus:outline-none focus:border-teal-500 w-44"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;label class="block text-[11px] font-medium text-slate-400 mb-1"&gt;Tarih&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;input type="text" id="caseDate" class="px-2.5 py-1 text-xs rounded-md bg-dark-input border border-slate-700 text-slate-200 focus:outline-none focus:border-teal-500 w-32" readonly&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="flex items-center gap-2"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-slate-800 text-slate-300 border border-slate-700"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;span class="w-2 h-2 mr-1.5 rounded-full bg-emerald-400 animate-pulse"&gt;&lt;/span&gt; Canlı Hesaplama Aktif</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- 1. BÖLÜM: DİŞ ÖLÇÜM GİRİŞLERİ (FDI SİSTEMİ) --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;section class="mb-6 bg-dark-card border border-slate-800 rounded-2xl p-5 shadow-lg relative overflow-hidden"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="flex flex-wrap items-center justify-between gap-2 mb-4 border-b border-slate-800 pb-3"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="flex items-center gap-2.5"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;span class="w-6 h-6 rounded-md bg-teal-500/20 text-teal-400 text-xs font-bold flex items-center justify-center"&gt;1&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;h2 class="text-sm font-bold tracking-wide uppercase text-slate-200"&gt;Meziodistal Kron Boyutu Ölçümleri (mm)&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="flex items-center gap-3 text-xs text-slate-400 font-mono"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;span class="flex items-center gap-1.5"&gt;&lt;span class="w-2.5 h-2.5 rounded bg-teal-900/60 border border-teal-500"&gt;&lt;/span&gt; 13-23 / 43-33 (Anterior 6 Diş)&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;span class="flex items-center gap-1.5"&gt;&lt;span class="w-2.5 h-2.5 rounded bg-slate-800 border border-slate-700"&gt;&lt;/span&gt; Premolar &amp; 1. Molar&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;!-- Çene İskeleti Tablosu --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="overflow-x-auto pb-2 custom-scrollbar"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="min-w-[760px]"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;!-- Üst Çene / Maksilla Başlığı --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="flex items-center justify-between px-3 py-1 text-xs font-bold text-teal-400 bg-teal-950/30 rounded-t-lg border-t border-x border-teal-900/40"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span class="flex items-center gap-1"&gt;SAĞ (Q1)&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span class="tracking-widest uppercase"&gt;</span><span class="s2">▲</span><span class="s1"> ÜST ÇENE (MAKSİLLA) </span><span class="s2">▲</span><span class="s1">&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span class="flex items-center gap-1"&gt;SOL (Q2)&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;!-- Üst Çene Girişleri --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="grid grid-cols-12 gap-1.5 p-2 bg-slate-900/90 border border-slate-800"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="tooth-col" data-tooth="16"&gt;&lt;div class="tooth-num"&gt;16&lt;/div&gt;&lt;input type="number" step="0.01" class="tooth-input" id="t_16"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="tooth-col" data-tooth="15"&gt;&lt;div class="tooth-num"&gt;15&lt;/div&gt;&lt;input type="number" step="0.01" class="tooth-input" id="t_15"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="tooth-col" data-tooth="14"&gt;&lt;div class="tooth-num"&gt;14&lt;/div&gt;&lt;input type="number" step="0.01" class="tooth-input" id="t_14"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="tooth-col is-anterior" data-tooth="13"&gt;&lt;div class="tooth-num ant"&gt;13&lt;/div&gt;&lt;input type="number" step="0.01" class="tooth-input ant-in" id="t_13"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="tooth-col is-anterior" data-tooth="12"&gt;&lt;div class="tooth-num ant"&gt;12&lt;/div&gt;&lt;input type="number" step="0.01" class="tooth-input ant-in" id="t_12"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="tooth-col is-anterior" data-tooth="11"&gt;&lt;div class="tooth-num ant"&gt;11&lt;/div&gt;&lt;input type="number" step="0.01" class="tooth-input ant-in" id="t_11"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="tooth-col is-anterior border-l-2 border-l-teal-500/40" data-tooth="21"&gt;&lt;div class="tooth-num ant"&gt;21&lt;/div&gt;&lt;input type="number" step="0.01" class="tooth-input ant-in" id="t_21"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="tooth-col is-anterior" data-tooth="22"&gt;&lt;div class="tooth-num ant"&gt;22&lt;/div&gt;&lt;input type="number" step="0.01" class="tooth-input ant-in" id="t_22"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="tooth-col is-anterior" data-tooth="23"&gt;&lt;div class="tooth-num ant"&gt;23&lt;/div&gt;&lt;input type="number" step="0.01" class="tooth-input ant-in" id="t_23"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="tooth-col" data-tooth="24"&gt;&lt;div class="tooth-num"&gt;24&lt;/div&gt;&lt;input type="number" step="0.01" class="tooth-input" id="t_24"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="tooth-col" data-tooth="25"&gt;&lt;div class="tooth-num"&gt;25&lt;/div&gt;&lt;input type="number" step="0.01" class="tooth-input" id="t_25"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="tooth-col" data-tooth="26"&gt;&lt;div class="tooth-num"&gt;26&lt;/div&gt;&lt;input type="number" step="0.01" class="tooth-input" id="t_26"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;!-- Oklüzyon Ayırıcı Çizgisi --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="relative py-1 flex items-center justify-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="w-full border-t border-dashed border-slate-700"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span class="absolute bg-slate-900 px-3 text-[10px] tracking-wider text-slate-500 font-mono uppercase"&gt;Oklüzyon Düzlemi&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;!-- Alt Çene Girişleri --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="grid grid-cols-12 gap-1.5 p-2 bg-slate-900/90 border border-slate-800"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="tooth-col" data-tooth="46"&gt;&lt;input type="number" step="0.01" class="tooth-input" id="t_46"&gt;&lt;div class="tooth-num"&gt;46&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="tooth-col" data-tooth="45"&gt;&lt;input type="number" step="0.01" class="tooth-input" id="t_45"&gt;&lt;div class="tooth-num"&gt;45&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="tooth-col" data-tooth="44"&gt;&lt;input type="number" step="0.01" class="tooth-input" id="t_44"&gt;&lt;div class="tooth-num"&gt;44&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="tooth-col is-anterior" data-tooth="43"&gt;&lt;input type="number" step="0.01" class="tooth-input ant-in" id="t_43"&gt;&lt;div class="tooth-num ant"&gt;43&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="tooth-col is-anterior" data-tooth="42"&gt;&lt;input type="number" step="0.01" class="tooth-input ant-in" id="t_42"&gt;&lt;div class="tooth-num ant"&gt;42&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="tooth-col is-anterior" data-tooth="41"&gt;&lt;input type="number" step="0.01" class="tooth-input ant-in" id="t_41"&gt;&lt;div class="tooth-num ant"&gt;41&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="tooth-col is-anterior border-l-2 border-l-teal-500/40" data-tooth="31"&gt;&lt;input type="number" step="0.01" class="tooth-input ant-in" id="t_31"&gt;&lt;div class="tooth-num ant"&gt;31&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="tooth-col is-anterior" data-tooth="32"&gt;&lt;input type="number" step="0.01" class="tooth-input ant-in" id="t_32"&gt;&lt;div class="tooth-num ant"&gt;32&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="tooth-col is-anterior" data-tooth="33"&gt;&lt;input type="number" step="0.01" class="tooth-input ant-in" id="t_33"&gt;&lt;div class="tooth-num ant"&gt;33&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="tooth-col" data-tooth="34"&gt;&lt;input type="number" step="0.01" class="tooth-input" id="t_34"&gt;&lt;div class="tooth-num"&gt;34&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="tooth-col" data-tooth="35"&gt;&lt;input type="number" step="0.01" class="tooth-input" id="t_35"&gt;&lt;div class="tooth-num"&gt;35&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="tooth-col" data-tooth="36"&gt;&lt;input type="number" step="0.01" class="tooth-input" id="t_36"&gt;&lt;div class="tooth-num"&gt;36&lt;/div&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;!-- Alt Çene / Mandibula Başlığı --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="flex items-center justify-between px-3 py-1 text-xs font-bold text-cyan-400 bg-cyan-950/30 rounded-b-lg border-b border-x border-cyan-900/40"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span class="flex items-center gap-1"&gt;SAĞ (Q4)&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span class="tracking-widest uppercase"&gt;</span><span class="s2">▼</span><span class="s1"> ALT ÇENE (MANDİBULA) </span><span class="s2">▼</span><span class="s1">&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span class="flex items-center gap-1"&gt;SOL (Q3)&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;!-- Çene Toplamları Özet Rozetleri --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-4 pt-4 border-t border-slate-800/80 font-mono"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="bg-slate-900/70 p-2.5 rounded-xl border border-slate-800"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="text-[11px] text-slate-400"&gt;Maksiller 12 Toplam&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="text-base font-bold text-teal-400" id="badge_max12"&gt;0.00 mm&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="bg-slate-900/70 p-2.5 rounded-xl border border-slate-800"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="text-[11px] text-slate-400"&gt;Mandibuler 12 Toplam&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="text-base font-bold text-cyan-400" id="badge_mand12"&gt;0.00 mm&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="bg-slate-900/70 p-2.5 rounded-xl border border-slate-800"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="text-[11px] text-slate-400"&gt;Üst 6 Anterior&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="text-base font-bold text-teal-300" id="badge_max6"&gt;0.00 mm&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="bg-slate-900/70 p-2.5 rounded-xl border border-slate-800"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="text-[11px] text-slate-400"&gt;Alt 6 Anterior&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="text-base font-bold text-cyan-300" id="badge_mand6"&gt;0.00 mm&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;!-- 2. BÖLÜM: ANALİZ VE SONUÇ PANELİ --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="grid grid-cols-1 lg:grid-cols-3 gap-6"&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;!-- SOL 2 SÜTUN: BOLTON ANALİZ MOTORU &amp; YER DARLIĞI --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="lg:col-span-2 space-y-6"&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;!-- BOLTON TOPLAM ORAN (12 DİŞ) --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="bg-dark-card border border-slate-800 rounded-2xl p-5 shadow-lg"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="flex items-center gap-2"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;span class="w-5 h-5 rounded-md bg-indigo-500/20 text-indigo-400 text-xs font-bold flex items-center justify-center"&gt;A&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;h3 class="text-sm font-bold text-slate-200"&gt;Toplam Bolton Oranı (Overall Ratio - 12 Diş)&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span class="text-xs px-2 py-0.5 rounded bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 font-mono"&gt;Norm Eşiği: %93.1[cite: 2]&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="p-3 bg-slate-900/80 rounded-xl border border-slate-800 flex flex-col justify-between"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;span class="text-xs text-slate-400 font-medium"&gt;Oran Formülü&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div class="text-xs font-mono text-slate-300 mt-1"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>(Alt 12 / Üst 12) × 100[cite: 2]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div class="text-[11px] text-slate-500 mt-2"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>Mand. 12: &lt;span id="calc_mand12" class="text-slate-300 font-bold"&gt;0.00&lt;/span&gt; / Maks. 12: &lt;span id="calc_max12" class="text-slate-300 font-bold"&gt;0.00&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="p-3 bg-slate-900/80 rounded-xl border border-slate-800 flex flex-col items-center justify-center text-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;span class="text-xs text-slate-400 font-medium mb-1"&gt;Hesaplanan Toplam Oran&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div id="ratio_total" class="text-2xl font-black font-mono text-slate-100"&gt;-%&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;span id="ratio_total_badge" class="mt-1 text-[11px] px-2 py-0.5 rounded-full font-semibold bg-slate-800 text-slate-400"&gt;Veri Bekleniyor&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="p-3 bg-slate-900/80 rounded-xl border border-slate-800 flex flex-col justify-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;span class="text-xs text-slate-400 font-medium mb-1"&gt;Diskrepans / Fazlalık Yeri&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div id="total_discrepancy_side" class="text-sm font-bold text-slate-200"&gt;-&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div id="total_excess_val" class="text-xs font-mono text-teal-400 font-semibold mt-1"&gt;0.00 mm&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;!-- Koşullu Kutular --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="grid grid-cols-1 sm:grid-cols-2 gap-4"&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div id="box_tot_gt" class="rounded-xl p-3.5 border transition-all duration-200 bg-slate-900/40 border-slate-800 opacity-60"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div class="flex items-center justify-between mb-2"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;span class="text-xs font-bold text-emerald-400"&gt;Toplam oran 93.1'den büyükse[cite: 2]&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;span class="text-[10px] bg-emerald-500/10 text-emerald-300 px-2 py-0.5 rounded border border-emerald-500/20"&gt;Alt Fazlalık&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;p class="text-[11px] text-slate-400 mb-2.5"&gt;Mandibuler dişler maksillaya kıyasla fazla genişliktedir[cite: 2].&lt;/p&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">              </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div class="grid grid-cols-3 gap-2 font-mono text-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="bg-dark-bg p-1.5 rounded border border-slate-800"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;div class="text-[10px] text-slate-500"&gt;Mand 12&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;div id="tot_gt_mand" class="text-xs font-bold text-slate-200"&gt;0.00&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="bg-dark-bg p-1.5 rounded border border-slate-800"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;div class="text-[10px] text-slate-500"&gt;İdeal&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;div id="tot_gt_ideal" class="text-xs font-bold text-indigo-400"&gt;0.00&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="bg-emerald-950/40 p-1.5 rounded border border-emerald-500/40"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;div class="text-[10px] text-emerald-400 font-semibold"&gt;Fark&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;div id="tot_gt_diff" class="text-xs font-extrabold text-emerald-300"&gt;0.00 mm&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div id="box_tot_lt" class="rounded-xl p-3.5 border transition-all duration-200 bg-slate-900/40 border-slate-800 opacity-60"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div class="flex items-center justify-between mb-2"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;span class="text-xs font-bold text-rose-400"&gt;Toplam oran 93.1'den küçükse[cite: 2]&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;span class="text-[10px] bg-rose-500/10 text-rose-300 px-2 py-0.5 rounded border border-rose-500/20"&gt;Üst Fazlalık&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;p class="text-[11px] text-slate-400 mb-2.5"&gt;Maksiller dişler mandibulaya kıyasla daha geniş boyuttadır[cite: 2].&lt;/p&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">              </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div class="grid grid-cols-3 gap-2 font-mono text-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="bg-dark-bg p-1.5 rounded border border-slate-800"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;div class="text-[10px] text-slate-500"&gt;Maks 12&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;div id="tot_lt_max" class="text-xs font-bold text-slate-200"&gt;0.00&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="bg-dark-bg p-1.5 rounded border border-slate-800"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;div class="text-[10px] text-slate-500"&gt;İdeal&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;div id="tot_lt_ideal" class="text-xs font-bold text-indigo-400"&gt;0.00&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="bg-rose-950/40 p-1.5 rounded border border-rose-500/40"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;div class="text-[10px] text-rose-400 font-semibold"&gt;Fark&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;div id="tot_lt_diff" class="text-xs font-extrabold text-rose-300"&gt;0.00 mm&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;!-- BOLTON ANTERİOR ORAN (6 DİŞ) --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="bg-dark-card border border-slate-800 rounded-2xl p-5 shadow-lg"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="flex items-center gap-2"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;span class="w-5 h-5 rounded-md bg-teal-500/20 text-teal-400 text-xs font-bold flex items-center justify-center"&gt;B&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;h3 class="text-sm font-bold text-slate-200"&gt;Anterior Bolton Oranı (Anterior Ratio - 6 Diş)&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span class="text-xs px-2 py-0.5 rounded bg-teal-500/10 border border-teal-500/20 text-teal-300 font-mono"&gt;Norm: %78.7[cite: 2] (±1.57)&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="p-3 bg-slate-900/80 rounded-xl border border-slate-800 flex flex-col justify-between"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;span class="text-xs text-slate-400 font-medium"&gt;Oran Formülü&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div class="text-xs font-mono text-slate-300 mt-1"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>(Alt 6 / Üst 6) × 100[cite: 2]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div class="text-[11px] text-slate-500 mt-2"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>Mand. 6: &lt;span id="calc_mand6" class="text-slate-300 font-bold"&gt;0.00&lt;/span&gt; / Maks. 6: &lt;span id="calc_max6" class="text-slate-300 font-bold"&gt;0.00&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="p-3 bg-slate-900/80 rounded-xl border border-slate-800 flex flex-col items-center justify-center text-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;span class="text-xs text-slate-400 font-medium mb-1"&gt;Hesaplanan Anterior Oran&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div id="ratio_ant" class="text-2xl font-black font-mono text-slate-100"&gt;-%&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;span id="ratio_ant_badge" class="mt-1 text-[11px] px-2 py-0.5 rounded-full font-semibold bg-slate-800 text-slate-400"&gt;Veri Bekleniyor&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="p-3 bg-slate-900/80 rounded-xl border border-slate-800 flex flex-col justify-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;span class="text-xs text-slate-400 font-medium mb-1"&gt;Anterior Diskrepans Yeri&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div id="ant_discrepancy_side" class="text-sm font-bold text-slate-200"&gt;-&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div id="ant_excess_val" class="text-xs font-mono text-teal-400 font-semibold mt-1"&gt;0.00 mm&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;!-- Anterior Kutular --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="grid grid-cols-1 sm:grid-cols-2 gap-4"&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div id="box_ant_gt" class="rounded-xl p-3.5 border transition-all duration-200 bg-slate-900/40 border-slate-800 opacity-60"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div class="flex items-center justify-between mb-2"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;span class="text-xs font-bold text-emerald-400"&gt;Toplam Oran 78.7'den BÜYÜK[cite: 2]&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;span class="text-[10px] bg-emerald-500/10 text-emerald-300 px-2 py-0.5 rounded border border-emerald-500/20"&gt;Alt Anterior Fazlalık&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;p class="text-[11px] text-slate-400 mb-2.5"&gt;Alt ön keserler ve kaninler, üst anterior bölgeye göre geniştir.&lt;/p&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">              </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div class="grid grid-cols-3 gap-2 font-mono text-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="bg-dark-bg p-1.5 rounded border border-slate-800"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;div class="text-[10px] text-slate-500"&gt;Mevcut Alt 6&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;div id="ant_gt_mand" class="text-xs font-bold text-slate-200"&gt;0.00&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="bg-dark-bg p-1.5 rounded border border-slate-800"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;div class="text-[10px] text-slate-500"&gt;İdeal Alt 6&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;div id="ant_gt_ideal" class="text-xs font-bold text-teal-400"&gt;0.00&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="bg-emerald-950/40 p-1.5 rounded border border-emerald-500/40"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;div class="text-[10px] text-emerald-400 font-semibold"&gt;Alt Fazlalık (Fark)&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;div id="ant_gt_diff" class="text-xs font-extrabold text-emerald-300"&gt;0.00 mm&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div id="box_ant_lt" class="rounded-xl p-3.5 border transition-all duration-200 bg-slate-900/40 border-slate-800 opacity-60"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div class="flex items-center justify-between mb-2"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;span class="text-xs font-bold text-rose-400"&gt;Toplam Oran 78.7'den KÜÇÜK[cite: 2]&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;span class="text-[10px] bg-rose-500/10 text-rose-300 px-2 py-0.5 rounded border border-rose-500/20"&gt;Üst Anterior Fazlalık&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;p class="text-[11px] text-slate-400 mb-2.5"&gt;Üst ön kesici ve kaninler, alt anterior bölgeye oranla geniş kalmaktadır.&lt;/p&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">              </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div class="grid grid-cols-3 gap-2 font-mono text-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="bg-dark-bg p-1.5 rounded border border-slate-800"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;div class="text-[10px] text-slate-500"&gt;Mevcut Üst 6&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;div id="ant_lt_max" class="text-xs font-bold text-slate-200"&gt;0.00&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="bg-dark-bg p-1.5 rounded border border-slate-800"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;div class="text-[10px] text-slate-500"&gt;İdeal Üst 6&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;div id="ant_lt_ideal" class="text-xs font-bold text-teal-400"&gt;0.00&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="bg-rose-950/40 p-1.5 rounded border border-rose-500/40"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;div class="text-[10px] text-rose-400 font-semibold"&gt;Üst Fazlalık (Fark)&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;div id="ant_lt_diff" class="text-xs font-extrabold text-rose-300"&gt;0.00 mm&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;!-- YER DARLIĞI / ARK BOYUTU DİSKREPANSI --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="bg-dark-card border border-slate-800 rounded-2xl p-5 shadow-lg"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="flex items-center gap-2"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;span class="w-5 h-5 rounded-md bg-amber-500/20 text-amber-400 text-xs font-bold flex items-center justify-center"&gt;C&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;h3 class="text-sm font-bold text-slate-200"&gt;YER DARLIĞI ANALİZİ&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span class="text-xs text-slate-400"&gt;Yer İhtiyacı: 1. Molarlar Hariç (15-25 / 45-35 Arası)&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 gap-4"&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="p-4 bg-slate-900/80 rounded-xl border border-slate-800 space-y-3"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div class="flex items-center justify-between"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;span class="text-xs font-bold text-teal-400 uppercase tracking-wide"&gt;ÜST ÇENE&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;span id="upper_status_badge" class="text-[10px] px-2 py-0.5 rounded font-mono bg-slate-800 text-slate-400"&gt;Hesaplanıyor&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div class="grid grid-cols-2 gap-3 text-xs"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;label class="text-[11px] text-slate-400 block mb-1"&gt;Yer İhtiyacı (15-25 Toplamı)&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;div id="ald_upper_needed" class="font-mono text-sm font-bold text-slate-200 bg-dark-bg p-2 rounded border border-slate-800"&gt;0.00 mm&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;label class="text-[11px] text-slate-400 block mb-1"&gt;Ark Boyu (mm)&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;input type="number" step="0.1" id="ald_upper_available" placeholder="Örn: 67.9" class="w-full font-mono text-sm font-bold text-teal-300 bg-dark-input p-2 rounded border border-slate-700 focus:outline-none focus:border-teal-500"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div class="p-2.5 rounded-lg bg-dark-bg border border-slate-800 flex items-center justify-between"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;span class="text-xs text-slate-400 font-medium"&gt;Yer Darlığı:&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;span id="ald_upper_result" class="font-mono text-sm font-bold text-slate-300"&gt;0.00 mm&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="p-4 bg-slate-900/80 rounded-xl border border-slate-800 space-y-3"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div class="flex items-center justify-between"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;span class="text-xs font-bold text-cyan-400 uppercase tracking-wide"&gt;ALT ÇENE&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;span id="lower_status_badge" class="text-[10px] px-2 py-0.5 rounded font-mono bg-slate-800 text-slate-400"&gt;Hesaplanıyor&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div class="grid grid-cols-2 gap-3 text-xs"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;label class="text-[11px] text-slate-400 block mb-1"&gt;Yer İhtiyacı (45-35 Toplamı)&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;div id="ald_lower_needed" class="font-mono text-sm font-bold text-slate-200 bg-dark-bg p-2 rounded border border-slate-800"&gt;0.00 mm&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;label class="text-[11px] text-slate-400 block mb-1"&gt;Ark Boyu (mm)&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;input type="number" step="0.1" id="ald_lower_available" placeholder="Örn: 60.2" class="w-full font-mono text-sm font-bold text-cyan-300 bg-dark-input p-2 rounded border border-slate-700 focus:outline-none focus:border-cyan-500"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;div class="p-2.5 rounded-lg bg-dark-bg border border-slate-800 flex items-center justify-between"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;span class="text-xs text-slate-400 font-medium"&gt;Yer Darlığı:&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;span id="ald_lower_result" class="font-mono text-sm font-bold text-slate-300"&gt;0.00 mm&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;!-- SAĞ SÜTUN: STANDART BOLTON TABLOSU &amp; KLİNİK RAPOR KARTI --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div class="space-y-6"&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;!-- KLİNİK YORUM &amp; TEDAVİ ÖNERİSİ KARTI --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="bg-gradient-to-b from-slate-900 to-dark-card border border-teal-500/20 rounded-2xl p-5 shadow-xl relative overflow-hidden"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="absolute -right-10 -bottom-10 w-40 h-40 bg-teal-500/5 rounded-full blur-2xl pointer-events-none"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="flex items-center gap-2 mb-3"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;svg class="w-5 h-5 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"&gt;&lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/&gt;&lt;/svg&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h3 class="text-sm font-bold text-white"&gt;Klinik Değerlendirme &amp; Yorum&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div id="clinicalSummary" class="text-xs text-slate-300 space-y-2 leading-relaxed"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>Diş ölçümleri girildiğinde ortodontik teşhis, IPR (stripping) gereksinimi ve ark darlığı uyarıları burada otomatik olarak listelenecektir.</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;!-- REFERANS LOOKUP TABLOSU --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="bg-dark-card border border-slate-800 rounded-2xl p-5 shadow-lg"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-3"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;h3 class="text-sm font-bold text-slate-200"&gt;Bolton Referans Norm Tablosu&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;p class="text-[11px] text-slate-400"&gt;Üst Ark Genişliğine Karşılık İdeal Alt Ark&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="flex gap-1"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;button id="tabBtn12" class="px-2.5 py-1 text-xs rounded font-semibold bg-teal-500/20 text-teal-300 border border-teal-500/30"&gt;12 Diş&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;button id="tabBtn6" class="px-2.5 py-1 text-xs rounded font-semibold bg-slate-800 text-slate-400 border border-slate-700 hover:text-slate-200"&gt;6 Diş&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="text-xs text-slate-400 mb-2 flex items-center justify-between"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span id="tableTitle" class="font-medium text-slate-300"&gt;Toplam 12 Diş Norm Tablosu&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span class="text-[10px] font-mono text-teal-400" id="tableNormIndicator"&gt;Oran: %93.1[cite: 2]&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="max-h-[360px] overflow-y-auto custom-scrollbar border border-slate-800 rounded-xl bg-slate-900/60 font-mono text-xs"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;table class="w-full text-left border-collapse" id="normLookupTable"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;thead class="sticky top-0 bg-slate-900 text-slate-400 border-b border-slate-800 text-[11px]"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;th class="p-2 border-r border-slate-800" id="th_upper"&gt;Üst 12 (mm)[cite: 2]&lt;/th&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                  </span>&lt;th class="p-2" id="th_lower"&gt;İdeal Alt 12 (mm)[cite: 2]&lt;/th&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/thead&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;tbody id="normTableBody" class="divide-y divide-slate-800/60 text-slate-300 text-[11px]"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;/tbody&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/table&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="text-[10px] text-slate-500 mt-2 text-center"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>Mevcut hasta değeriniz tabloda vurgulanır.</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/main&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- Alt Bilgi / Footer --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;footer class="border-t border-slate-800/80 bg-slate-900/40 py-4 mt-8 no-print"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between text-xs text-slate-500 gap-2"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div&gt;OrthoMetrics Dental Clinical Analytics • Wayne A. Bolton Ortodontik Standartları[cite: 1, 2]&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;div&gt;Ortodonti D1 Staj Grubu İçin Hazırlanmıştır — Stj. Dt. Ayberk Ocak&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/footer&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.tooth-col {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>display: flex;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>flex-direction: column;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>align-items: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>gap: 3px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>padding: 4px 2px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>border-radius: 8px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background-color: #0f172a;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>transition: all 0.15s ease;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.tooth-col:focus-within {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background-color: #1e293b;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>box-shadow: 0 0 0 1px #14b8a6;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.tooth-num {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-size: 10px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-weight: 700;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-family: 'JetBrains Mono', monospace;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>color: #94a3b8;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.tooth-num.ant {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>color: #2dd4bf;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.tooth-input {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>width: 100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>min-width: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>text-align: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>padding: 5px 2px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-size: 12px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-family: 'JetBrains Mono', monospace;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>font-weight: 600;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>border-radius: 6px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background-color: #1e293b;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>border: 1px solid #334155;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>color: #f8fafc;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>transition: all 0.15s ease;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.tooth-input:focus {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>outline: none;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>border-color: #14b8a6;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background-color: #0f172a;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.tooth-input.ant-in {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>background-color: #0d2826;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>border-color: #115e59;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>color: #5eead4;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>.tooth-input.ant-in:focus {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>border-color: #2dd4bf;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;!-- Logic &amp; Calculation Script --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const upperTeeth = ['16', '15', '14', '13', '12', '11', '21', '22', '23', '24', '25', '26'];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const lowerTeeth = ['46', '45', '44', '43', '42', '41', '31', '32', '33', '34', '35', '36'];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const upperAnterior = ['13', '12', '11', '21', '22', '23'];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const lowerAnterior = ['43', '42', '41', '31', '32', '33'];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const sampleData = {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>'16': 9.80, '15': 6.80, '14': 6.70, '13': 6.80, '12': 6.30, '11': 7.60,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>'21': 7.60, '22': 6.40, '23': 7.00, '24': 6.50, '25': 6.20, '26': 9.00,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>'46': 9.50, '45': 6.80, '44': 6.60, '43': 6.20, '42': 5.50, '41': 5.10,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>'31': 5.50, '32': 5.30, '33': 6.30, '34': 6.10, '35': 6.80, '36': 10.10,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>ald_upper: 67.90,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>ald_lower: 60.20</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const normData12 = [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ upper: 85.0, lower: 79.1 }, { upper: 86.0, lower: 80.0 }, { upper: 87.0, lower: 80.9 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ upper: 88.0, lower: 81.9 }, { upper: 89.0, lower: 82.8 }, { upper: 90.0, lower: 83.7 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ upper: 91.0, lower: 84.7 }, { upper: 92.0, lower: 85.6 }, { upper: 93.0, lower: 86.5 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ upper: 94.0, lower: 87.5 }, { upper: 95.0, lower: 88.4 }, { upper: 96.0, lower: 89.3 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ upper: 97.0, lower: 90.3 }, { upper: 98.0, lower: 91.2 }, { upper: 99.0, lower: 92.1 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ upper: 100.0, lower: 93.1 }, { upper: 101.0, lower: 94.0 }, { upper: 102.0, lower: 94.9 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ upper: 103.0, lower: 95.8 }, { upper: 104.0, lower: 96.8 }, { upper: 105.0, lower: 97.7 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ upper: 106.0, lower: 98.6 }, { upper: 107.0, lower: 99.6 }, { upper: 108.0, lower: 100.5 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ upper: 109.0, lower: 101.2 }, { upper: 110.0, lower: 102.4 }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const normData6 = [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ upper: 40.0, lower: 31.5 }, { upper: 40.5, lower: 31.9 }, { upper: 41.0, lower: 32.2 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ upper: 41.5, lower: 32.6 }, { upper: 42.0, lower: 33.0 }, { upper: 42.5, lower: 33.4 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ upper: 43.0, lower: 33.8 }, { upper: 43.5, lower: 34.2 }, { upper: 44.0, lower: 34.6 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ upper: 44.5, lower: 35.0 }, { upper: 45.0, lower: 35.4 }, { upper: 45.5, lower: 35.8 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ upper: 46.0, lower: 36.2 }, { upper: 46.5, lower: 36.6 }, { upper: 47.0, lower: 37.0 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ upper: 47.5, lower: 37.4 }, { upper: 48.0, lower: 37.8 }, { upper: 48.5, lower: 38.2 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ upper: 49.0, lower: 38.5 }, { upper: 49.5, lower: 38.9 }, { upper: 50.0, lower: 39.3 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ upper: 50.5, lower: 39.7 }, { upper: 51.0, lower: 40.1 }, { upper: 51.5, lower: 40.5 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ upper: 52.0, lower: 40.9 }, { upper: 52.5, lower: 41.3 }, { upper: 53.0, lower: 41.7 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ upper: 53.5, lower: 42.1 }, { upper: 54.0, lower: 42.5 }, { upper: 54.5, lower: 42.9 },</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{ upper: 55.0, lower: 43.3 }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>let currentTableMode = 12;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>window.addEventListener('DOMContentLoaded', () =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const today = new Date().toISOString().split('T')[0];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById('caseDate').value = today;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const allTeeth = [...upperTeeth, ...lowerTeeth];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>allTeeth.forEach(tooth =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const input = document.getElementById(`t_${tooth}`);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>input.addEventListener('input', calculateAll);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>input.addEventListener('keydown', (e) =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>if (e.key === 'Enter') {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>moveToNextInput(tooth);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById('ald_upper_available').addEventListener('input', calculateAll);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById('ald_lower_available').addEventListener('input', calculateAll);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById('btnLoadExample').addEventListener('click', loadExampleCase);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById('btnClear').addEventListener('click', clearAll);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById('btnPrint').addEventListener('click', () =&gt; window.print());</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById('btnCopyReport').addEventListener('click', copySummaryToClipboard);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById('tabBtn12').addEventListener('click', () =&gt; setTableMode(12));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById('tabBtn6').addEventListener('click', () =&gt; setTableMode(6));</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>renderNormTable();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>loadExampleCase(false);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function moveToNextInput(currentId) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const order = [</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>'16','15','14','13','12','11','21','22','23','24','25','26',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>'46','45','44','43','42','41','31','32','33','34','35','36'</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const index = order.indexOf(currentId);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if (index !== -1 &amp;&amp; index &lt; order.length - 1) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById(`t_${order[index + 1]}`).focus();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function loadExampleCase(showToastNotice = true) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>for (const [key, val] of Object.entries(sampleData)) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if (key.startsWith('ald_')) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>document.getElementById(key === 'ald_upper' ? 'ald_upper_available' : 'ald_lower_available').value = val.toFixed(1);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>const el = document.getElementById(`t_${key}`);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>if (el) el.value = val.toFixed(2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById('patientCode').value = "Örnek Vaka #Bolton";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById('dentistName').value = "Stj. Dt. Ayberk Ocak";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>calculateAll();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if (showToastNotice) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>showToast("Excel örnek vaka değerleri yüklendi!");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function clearAll() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const allTeeth = [...upperTeeth, ...lowerTeeth];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>allTeeth.forEach(tooth =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById(`t_${tooth}`).value = '';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById('ald_upper_available').value = '';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById('ald_lower_available').value = '';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>calculateAll();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>showToast("Tüm ölçümler temizlendi.");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function showToast(text) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const toast = document.getElementById('toast');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById('toastMsg').innerText = text;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>toast.classList.remove('opacity-0', 'translate-y-20');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>toast.classList.add('opacity-100', 'translate-y-0');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>setTimeout(() =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>toast.classList.remove('opacity-100', 'translate-y-0');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>toast.classList.add('opacity-0', 'translate-y-20');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}, 2600);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function getVal(id) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const v = parseFloat(document.getElementById(id).value);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>return isNaN(v) ? 0 : v;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function calculateAll() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>let max12 = 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>let mand12 = 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>let max6 = 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>let mand6 = 0;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>upperTeeth.forEach(t =&gt; { max12 += getVal(`t_${t}`); });</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>lowerTeeth.forEach(t =&gt; { mand12 += getVal(`t_${t}`); });</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>upperAnterior.forEach(t =&gt; { max6 += getVal(`t_${t}`); });</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>lowerAnterior.forEach(t =&gt; { mand6 += getVal(`t_${t}`); });</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById('badge_max12').innerText = `${max12.toFixed(2)} mm`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById('badge_mand12').innerText = `${mand12.toFixed(2)} mm`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById('badge_max6').innerText = `${max6.toFixed(2)} mm`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById('badge_mand6').innerText = `${mand6.toFixed(2)} mm`;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById('calc_mand12').innerText = mand12.toFixed(2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById('calc_max12').innerText = max12.toFixed(2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById('calc_mand6').innerText = mand6.toFixed(2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById('calc_max6').innerText = max6.toFixed(2);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const totalRatioEl = document.getElementById('ratio_total');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const totalBadgeEl = document.getElementById('ratio_total_badge');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const totalSideEl = document.getElementById('total_discrepancy_side');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const totalExcessValEl = document.getElementById('total_excess_val');</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const boxTotGt = document.getElementById('box_tot_gt');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const boxTotLt = document.getElementById('box_tot_lt');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>let totalRatio = 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>let totalExcessAmount = 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>let totalExcessArch = 'normal';</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if (max12 &gt; 0 &amp;&amp; mand12 &gt; 0) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>totalRatio = (mand12 / max12) * 100;[cite: 2]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>totalRatioEl.innerText = `%${Math.round(totalRatio)}`;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const idealMand12 = max12 * 0.931;[cite: 2]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const idealMax12 = mand12 / 0.931;[cite: 2]</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('tot_gt_mand').innerText = mand12.toFixed(2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('tot_gt_ideal').innerText = idealMand12.toFixed(2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const mandExcess = Math.max(0, mand12 - idealMand12);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('tot_gt_diff').innerText = `${mandExcess.toFixed(2)}`;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('tot_lt_max').innerText = max12.toFixed(2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('tot_lt_ideal').innerText = idealMax12.toFixed(2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const maxExcess = Math.max(0, max12 - idealMax12);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('tot_lt_diff').innerText = `${maxExcess.toFixed(2)}`;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if (totalRatio &gt; 93.1) {[cite: 2]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>totalExcessArch = 'mandible';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>totalExcessAmount = mandExcess;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>totalSideEl.innerText = "Mandibuler (Alt Ark) Fazlalığı";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>totalSideEl.className = "text-sm font-bold text-emerald-400";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>totalExcessValEl.innerText = `${mandExcess.toFixed(2)} mm Redüksiyon / IPR`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>totalBadgeEl.innerText = "Alt Fazlalık (&gt; %93.1)";[cite: 2]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>totalBadgeEl.className = "mt-1 text-[11px] px-2 py-0.5 rounded-full font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30";</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>boxTotGt.classList.remove('opacity-60', 'border-slate-800');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>boxTotGt.classList.add('border-emerald-500/60', 'bg-emerald-950/20');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>boxTotLt.classList.add('opacity-40');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>boxTotLt.classList.remove('border-rose-500/60', 'bg-rose-950/20');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>} else if (totalRatio &lt; 93.1) {[cite: 2]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>totalExcessArch = 'maxilla';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>totalExcessAmount = maxExcess;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>totalSideEl.innerText = "Maksiller (Üst Ark) Fazlalığı";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>totalSideEl.className = "text-sm font-bold text-rose-400";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>totalExcessValEl.innerText = `${maxExcess.toFixed(2)} mm Redüksiyon / IPR`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>totalBadgeEl.innerText = "Üst Fazlalık (&lt; %93.1)";[cite: 2]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>totalBadgeEl.className = "mt-1 text-[11px] px-2 py-0.5 rounded-full font-semibold bg-rose-500/20 text-rose-300 border border-rose-500/30";</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>boxTotLt.classList.remove('opacity-60', 'border-slate-800');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>boxTotLt.classList.add('border-rose-500/60', 'bg-rose-950/20');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>boxTotGt.classList.add('opacity-40');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>boxTotGt.classList.remove('border-emerald-500/60', 'bg-emerald-950/20');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>totalExcessArch = 'normal';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>totalSideEl.innerText = "Mükemmel Uyum (Ortodontik Denge)";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>totalSideEl.className = "text-sm font-bold text-teal-300";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>totalExcessValEl.innerText = "0.00 mm (İdeal)";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>totalBadgeEl.innerText = "Birebir Bolton Normu (%93.1)";[cite: 2]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>totalBadgeEl.className = "mt-1 text-[11px] px-2 py-0.5 rounded-full font-semibold bg-teal-500/20 text-teal-300 border border-teal-500/30";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>boxTotGt.classList.add('opacity-60');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>boxTotLt.classList.add('opacity-60');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>totalRatioEl.innerText = "-%";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>totalBadgeEl.innerText = "Veri Bekleniyor";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>totalBadgeEl.className = "mt-1 text-[11px] px-2 py-0.5 rounded-full font-semibold bg-slate-800 text-slate-400";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>totalSideEl.innerText = "-";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>totalExcessValEl.innerText = "0.00 mm";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>boxTotGt.classList.add('opacity-60');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>boxTotLt.classList.add('opacity-60');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const antRatioEl = document.getElementById('ratio_ant');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const antBadgeEl = document.getElementById('ratio_ant_badge');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const antSideEl = document.getElementById('ant_discrepancy_side');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const antExcessValEl = document.getElementById('ant_excess_val');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const boxAntGt = document.getElementById('box_ant_gt');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const boxAntLt = document.getElementById('box_ant_lt');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>let antRatio = 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>let antExcessAmount = 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>let antExcessArch = 'normal';</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if (max6 &gt; 0 &amp;&amp; mand6 &gt; 0) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>antRatio = (mand6 / max6) * 100;[cite: 2]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>antRatioEl.innerText = `%${antRatio.toFixed(1)}`;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const idealMand6 = max6 * 0.787;[cite: 2]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const idealMax6 = mand6 / 0.787;[cite: 2]</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('ant_gt_mand').innerText = mand6.toFixed(2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('ant_gt_ideal').innerText = idealMand6.toFixed(2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const mandAntExcess = Math.max(0, mand6 - idealMand6);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('ant_gt_diff').innerText = `+${mandAntExcess.toFixed(2)} mm`;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('ant_lt_max').innerText = max6.toFixed(2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('ant_lt_ideal').innerText = idealMax6.toFixed(2);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const maxAntExcess = Math.max(0, max6 - idealMax6);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.getElementById('ant_lt_diff').innerText = `+${maxAntExcess.toFixed(2)} mm`;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if (antRatio &gt; 78.7) {[cite: 2]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>antExcessArch = 'mandible';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>antExcessAmount = mandAntExcess;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>antSideEl.innerText = "Mandibuler Anterior Fazlalık";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>antSideEl.className = "text-sm font-bold text-emerald-400";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>antExcessValEl.innerText = `${mandAntExcess.toFixed(2)} mm Anterior IPR`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>antBadgeEl.innerText = "Alt Anterior Fazlalık (&gt; %78.7)";[cite: 2]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>antBadgeEl.className = "mt-1 text-[11px] px-2 py-0.5 rounded-full font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30";</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>boxAntGt.classList.remove('opacity-60', 'border-slate-800');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>boxAntGt.classList.add('border-emerald-500/60', 'bg-emerald-950/20');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>boxAntLt.classList.add('opacity-40');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>boxAntLt.classList.remove('border-rose-500/60', 'bg-rose-950/20');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>} else if (antRatio &lt; 78.7) {[cite: 2]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>antExcessArch = 'maxilla';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>antExcessAmount = maxAntExcess;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>antSideEl.innerText = "Maksiller Anterior Fazlalık";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>antSideEl.className = "text-sm font-bold text-rose-400";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>antExcessValEl.innerText = `${maxAntExcess.toFixed(2)} mm Anterior IPR`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>antBadgeEl.innerText = "Üst Anterior Fazlalık (&lt; %78.7)";[cite: 2]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>antBadgeEl.className = "mt-1 text-[11px] px-2 py-0.5 rounded-full font-semibold bg-rose-500/20 text-rose-300 border border-rose-500/30";</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>boxAntLt.classList.remove('opacity-60', 'border-slate-800');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>boxAntLt.classList.add('border-rose-500/60', 'bg-rose-950/20');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>boxAntGt.classList.add('opacity-40');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>boxAntGt.classList.remove('border-emerald-500/60', 'bg-emerald-950/20');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>antExcessArch = 'normal';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>antSideEl.innerText = "İdeal Anterior Uyum";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>antSideEl.className = "text-sm font-bold text-teal-300";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>antExcessValEl.innerText = "0.00 mm (İdeal Overjet/Overbite)";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>antBadgeEl.innerText = "Birebir Bolton Anterior Normu";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>antBadgeEl.className = "mt-1 text-[11px] px-2 py-0.5 rounded-full font-semibold bg-teal-500/20 text-teal-300 border border-teal-500/30";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>boxAntGt.classList.add('opacity-60');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>boxAntLt.classList.add('opacity-60');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>antRatioEl.innerText = "-%";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>antBadgeEl.innerText = "Veri Bekleniyor";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>antBadgeEl.className = "mt-1 text-[11px] px-2 py-0.5 rounded-full font-semibold bg-slate-800 text-slate-400";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>antSideEl.innerText = "-";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>antExcessValEl.innerText = "0.00 mm";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>boxAntGt.classList.add('opacity-60');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>boxAntLt.classList.add('opacity-60');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const upperNeeded10 = Math.max(0, max12 - (getVal('t_16') + getVal('t_26')));</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const lowerNeeded10 = Math.max(0, mand12 - (getVal('t_46') + getVal('t_36')));</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById('ald_upper_needed').innerText = `${upperNeeded10.toFixed(2)} mm`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.getElementById('ald_lower_needed').innerText = `${lowerNeeded10.toFixed(2)} mm`;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const upperAvailable = getVal('ald_upper_available');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const lowerAvailable = getVal('ald_lower_available');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const upperDiff = upperAvailable &gt; 0 ? (upperAvailable - upperNeeded10) : 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const lowerDiff = lowerAvailable &gt; 0 ? (lowerAvailable - lowerNeeded10) : 0;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const upperResEl = document.getElementById('ald_upper_result');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const upperBadgeEl = document.getElementById('upper_status_badge');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if (upperAvailable &gt; 0) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if (upperDiff &lt; -0.05) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>upperResEl.innerHTML = `&lt;span class="text-rose-400 font-bold"&gt;${Math.abs(upperDiff).toFixed(2)} mm Yer Darlığı&lt;/span&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>upperBadgeEl.innerText = "Yer Darlığı";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>upperBadgeEl.className = "text-[10px] px-2 py-0.5 rounded font-mono bg-rose-500/20 text-rose-300 border border-rose-500/30";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>} else if (upperDiff &gt; 0.05) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>upperResEl.innerHTML = `&lt;span class="text-emerald-400 font-bold"&gt;+${upperDiff.toFixed(2)} mm Yer Fazlalığı&lt;/span&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>upperBadgeEl.innerText = "Yer Fazlalığı";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>upperBadgeEl.className = "text-[10px] px-2 py-0.5 rounded font-mono bg-emerald-500/20 text-emerald-300 border border-emerald-500/30";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>upperResEl.innerHTML = `&lt;span class="text-teal-300 font-bold"&gt;0.00 mm (Tam Uyum)&lt;/span&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>upperBadgeEl.innerText = "Dengeli";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>upperBadgeEl.className = "text-[10px] px-2 py-0.5 rounded font-mono bg-teal-500/20 text-teal-300 border border-teal-500/30";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>upperResEl.innerText = "Ark boyu bekleniyor";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>upperBadgeEl.innerText = "Bekleniyor";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>upperBadgeEl.className = "text-[10px] px-2 py-0.5 rounded font-mono bg-slate-800 text-slate-400";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const lowerResEl = document.getElementById('ald_lower_result');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const lowerBadgeEl = document.getElementById('lower_status_badge');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if (lowerAvailable &gt; 0) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if (lowerDiff &lt; -0.05) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>lowerResEl.innerHTML = `&lt;span class="text-rose-400 font-bold"&gt;${Math.abs(lowerDiff).toFixed(2)} mm Yer Darlığı&lt;/span&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>lowerBadgeEl.innerText = "Yer Darlığı";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>lowerBadgeEl.className = "text-[10px] px-2 py-0.5 rounded font-mono bg-rose-500/20 text-rose-300 border border-rose-500/30";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>} else if (lowerDiff &gt; 0.05) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>lowerResEl.innerHTML = `&lt;span class="text-emerald-400 font-bold"&gt;+${lowerDiff.toFixed(2)} mm Yer Fazlalığı&lt;/span&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>lowerBadgeEl.innerText = "Yer Fazlalığı";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>lowerBadgeEl.className = "text-[10px] px-2 py-0.5 rounded font-mono bg-emerald-500/20 text-emerald-300 border border-emerald-500/30";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>lowerResEl.innerHTML = `&lt;span class="text-teal-300 font-bold"&gt;0.00 mm (Tam Uyum)&lt;/span&gt;`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>lowerBadgeEl.innerText = "Dengeli";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>lowerBadgeEl.className = "text-[10px] px-2 py-0.5 rounded font-mono bg-teal-500/20 text-teal-300 border border-teal-500/30";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>lowerResEl.innerText = "Ark boyu bekleniyor";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>lowerBadgeEl.innerText = "Bekleniyor";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>lowerBadgeEl.className = "text-[10px] px-2 py-0.5 rounded font-mono bg-slate-800 text-slate-400";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>updateClinicalSummary({</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>max12, mand12, max6, mand6,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>totalRatio, totalExcessArch, totalExcessAmount,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>antRatio, antExcessArch, antExcessAmount,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>upperAvailable, lowerAvailable, upperDiff, lowerDiff</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>renderNormTable(currentTableMode === 12 ? max12 : max6);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function updateClinicalSummary(data) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const el = document.getElementById('clinicalSummary');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if (data.max12 === 0 || data.mand12 === 0) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>el.innerHTML = '&lt;p class="text-slate-400 italic"&gt;Lütfen hesaplamanın oluşturulabilmesi için diş genişliklerini giriniz.&lt;/p&gt;';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>let notes = [];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if (data.totalRatio &gt; 93.1) {[cite: 2]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>notes.push(`</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="flex items-start gap-2 bg-slate-800/60 p-2.5 rounded-lg border border-slate-700"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span class="text-emerald-400 font-bold"&gt;</span><span class="s2">●</span><span class="s1">&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;strong class="text-slate-200"&gt;Toplam Bolton Diskrepansı:&lt;/strong&gt; Mandibuler diş boyut fazlalığı mevcuttur (%${data.totalRatio.toFixed(1)} &gt; %93.1)[cite: 2]. İdeal Class I molar ve kanin ilişkisi elde etmek için alt arktan toplam yaklaşık &lt;strong class="text-emerald-300"&gt;${data.totalExcessAmount.toFixed(2)} mm&lt;/strong&gt; interproksimal mineli aşındırma (IPR) gerekebilir.</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>`);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>} else if (data.totalRatio &lt; 93.1) {[cite: 2]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>notes.push(`</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="flex items-start gap-2 bg-slate-800/60 p-2.5 rounded-lg border border-slate-700"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span class="text-rose-400 font-bold"&gt;</span><span class="s2">●</span><span class="s1">&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;strong class="text-slate-200"&gt;Toplam Bolton Diskrepansı:&lt;/strong&gt; Maksiller diş boyut fazlalığı saptanmıştır (%${data.totalRatio.toFixed(1)} &lt; %93.1)[cite: 2]. Üst arktan yaklaşık &lt;strong class="text-rose-300"&gt;${data.totalExcessAmount.toFixed(2)} mm&lt;/strong&gt; redüksiyon veya alt arkta açma/genişletme planlanabilir.</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>`);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>notes.push(`</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="flex items-start gap-2 bg-slate-800/60 p-2.5 rounded-lg border border-teal-500/40"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span class="text-teal-400 font-bold"&gt;</span><span class="s3">✓</span><span class="s1">&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div&gt;&lt;strong class="text-teal-300"&gt;Mükemmel Toplam Bolton Uyumu:&lt;/strong&gt; 12 diş oranı ideal %93.1[cite: 2] norm değerindedir.&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>`);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if (data.antRatio &gt; 78.7) {[cite: 2]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>notes.push(`</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="flex items-start gap-2 bg-slate-800/60 p-2.5 rounded-lg border border-slate-700"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span class="text-emerald-400 font-bold"&gt;</span><span class="s2">●</span><span class="s1">&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;strong class="text-slate-200"&gt;Anterior Diskrepans (Ön Bölge):&lt;/strong&gt; Alt anterior 6 diş geniştir (%${data.antRatio.toFixed(1)} &gt; %78.7)[cite: 2]. İdeal Overbite/Overjet için alt 3-3 bölgesinde &lt;strong class="text-emerald-300"&gt;${data.antExcessAmount.toFixed(2)} mm&lt;/strong&gt; IPR stripping önerilir.</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>`);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>} else if (data.antRatio &lt; 78.7) {[cite: 2]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>notes.push(`</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="flex items-start gap-2 bg-slate-800/60 p-2.5 rounded-lg border border-slate-700"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span class="text-rose-400 font-bold"&gt;</span><span class="s2">●</span><span class="s1">&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">              </span>&lt;strong class="text-slate-200"&gt;Anterior Diskrepans (Ön Bölge):&lt;/strong&gt; Üst anterior bölgede fazlalık vardır (%${data.antRatio.toFixed(1)} &lt; %78.7)[cite: 2]. Üst kaninden kanine &lt;strong class="text-rose-300"&gt;${data.antExcessAmount.toFixed(2)} mm&lt;/strong&gt; stripping veya alt anterior dişlere kompozit ekleme değerlendirilebilir.</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>`);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if (data.upperAvailable &gt; 0 || data.lowerAvailable &gt; 0) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>let aldText = '';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if (data.upperAvailable &gt; 0) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>aldText += data.upperDiff &lt; 0<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>? `Üst Çenede &lt;strong&gt;${Math.abs(data.upperDiff).toFixed(2)} mm yer darlığı&lt;/strong&gt; mevcuttur. `<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>: `Üst Çenede &lt;strong&gt;+${data.upperDiff.toFixed(2)} mm yer fazlalığı&lt;/strong&gt; mevcuttur. `;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if (data.lowerAvailable &gt; 0) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>aldText += data.lowerDiff &lt; 0<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>? `Alt Çenede &lt;strong&gt;${Math.abs(data.lowerDiff).toFixed(2)} mm yer darlığı&lt;/strong&gt; mevcuttur.`<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>: `Alt Çenede &lt;strong&gt;+${data.lowerDiff.toFixed(2)} mm yer fazlalığı&lt;/strong&gt; mevcuttur.`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>notes.push(`</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;div class="flex items-start gap-2 bg-slate-800/60 p-2.5 rounded-lg border border-amber-500/30"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;span class="text-amber-400 font-bold"&gt;</span><span class="s4">ℹ</span><span class="s1">&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div&gt;&lt;strong class="text-amber-300"&gt;Ark Boyutu (Yer Darlığı):&lt;/strong&gt; ${aldText}&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>`);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>el.innerHTML = notes.join('');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function setTableMode(mode) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>currentTableMode = mode;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const btn12 = document.getElementById('tabBtn12');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const btn6 = document.getElementById('tabBtn6');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const thUpper = document.getElementById('th_upper');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const thLower = document.getElementById('th_lower');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const tableTitle = document.getElementById('tableTitle');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const normInd = document.getElementById('tableNormIndicator');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if (mode === 12) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>btn12.className = "px-2.5 py-1 text-xs rounded font-semibold bg-teal-500/20 text-teal-300 border border-teal-500/30";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>btn6.className = "px-2.5 py-1 text-xs rounded font-semibold bg-slate-800 text-slate-400 border border-slate-700 hover:text-slate-200";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>thUpper.innerText = "Üst 12 (mm)";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>thLower.innerText = "İdeal Alt 12 (mm)";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>tableTitle.innerText = "Toplam 12 Diş Norm Tablosu";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>normInd.innerText = "Oran: %93.1";[cite: 2]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>btn6.className = "px-2.5 py-1 text-xs rounded font-semibold bg-teal-500/20 text-teal-300 border border-teal-500/30";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>btn12.className = "px-2.5 py-1 text-xs rounded font-semibold bg-slate-800 text-slate-400 border border-slate-700 hover:text-slate-200";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>thUpper.innerText = "Üst 6 (mm)";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>thLower.innerText = "İdeal Alt 6 (mm)";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>tableTitle.innerText = "Anterior 6 Diş Norm Tablosu";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>normInd.innerText = "Oran: %78.7";[cite: 2]</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>let upperSum = 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if (mode === 12) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>upperTeeth.forEach(t =&gt; { upperSum += getVal(`t_${t}`); });</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>upperAnterior.forEach(t =&gt; { upperSum += getVal(`t_${t}`); });</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>renderNormTable(upperSum);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function renderNormTable(highlightVal = 0) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const tbody = document.getElementById('normTableBody');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>tbody.innerHTML = '';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const list = currentTableMode === 12 ? normData12 : normData6;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>let closestDiff = 999;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>let closestUpper = -1;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>if (highlightVal &gt; 0) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>list.forEach(row =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>const diff = Math.abs(row.upper - highlightVal);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>if (diff &lt; closestDiff) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>closestDiff = diff;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>closestUpper = row.upper;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>list.forEach(row =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const isClosest = highlightVal &gt; 0 &amp;&amp; Math.abs(row.upper - closestUpper) &lt; 0.1;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const tr = document.createElement('tr');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>if (isClosest) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>tr.className = "bg-teal-950/70 text-teal-200 font-bold border-l-4 border-l-teal-400";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>tr.className = "hover:bg-slate-800/40 transition";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>tr.innerHTML = `</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;td class="p-2 border-r border-slate-800/60"&gt;${row.upper.toFixed(1)} ${isClosest ? '&lt;span class="text-[9px] bg-teal-500 text-slate-950 px-1 py-0.2 rounded font-sans ml-1"&gt;Hastaya En Yakın&lt;/span&gt;' : ''}&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">          </span>&lt;td class="p-2"&gt;${row.lower.toFixed(1)}&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>tbody.appendChild(tr);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>function copySummaryToClipboard() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const patient = document.getElementById('patientCode').value || 'Belirtilmedi';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const dentist = document.getElementById('dentistName').value || 'Belirtilmedi';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const date = document.getElementById('caseDate').value;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const max12 = document.getElementById('badge_max12').innerText;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const mand12 = document.getElementById('badge_mand12').innerText;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const ratioTot = document.getElementById('ratio_total').innerText;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const diffTot = document.getElementById('total_excess_val').innerText;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const max6 = document.getElementById('badge_max6').innerText;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const mand6 = document.getElementById('badge_mand6').innerText;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const ratioAnt = document.getElementById('ratio_ant').innerText;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const diffAnt = document.getElementById('ant_excess_val').innerText;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const upperAld = document.getElementById('ald_upper_result').innerText;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const lowerAld = document.getElementById('ald_lower_result').innerText;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const reportText =<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1">`==============================================</span></p>
+<p class="p1"><span class="s1">ORTOMETRICS - BOLTON VE YER DARLIĞI ANALİZ RAPORU</span></p>
+<p class="p1"><span class="s1">==============================================</span></p>
+<p class="p1"><span class="s1">Tarih: ${date}</span></p>
+<p class="p1"><span class="s1">Hasta / Vaka: ${patient}</span></p>
+<p class="p1"><span class="s1">Hekim / Stajyer: ${dentist}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">--- 1. TOPLAM BOLTON ORANI (12 DİŞ) ---</span></p>
+<p class="p1"><span class="s1">Maksiller 12 Toplam : ${max12}</span></p>
+<p class="p1"><span class="s1">Mandibuler 12 Toplam: ${mand12}</span></p>
+<p class="p1"><span class="s1">Hesaplanan Oran <span class="Apple-converted-space">    </span>: ${ratioTot} (Excel Norm Eşiği: %93.1)[cite: 2]</span></p>
+<p class="p1"><span class="s1">Değerlendirme <span class="Apple-converted-space">      </span>: ${diffTot}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">--- 2. ANTERİOR BOLTON ORANI (6 DİŞ) ---</span></p>
+<p class="p1"><span class="s1">Maksiller 6 Anterior: ${max6}</span></p>
+<p class="p1"><span class="s1">Mandibuler 6 Anterior: ${mand6}</span></p>
+<p class="p1"><span class="s1">Hesaplanan Oran <span class="Apple-converted-space">    </span>: ${ratioAnt} (Standart Norm: %78.7)[cite: 2]</span></p>
+<p class="p1"><span class="s1">Değerlendirme <span class="Apple-converted-space">      </span>: ${diffAnt}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">--- 3. YER DARLIĞI / ARK BOYUTU DİSKREPANSI ---</span></p>
+<p class="p1"><span class="s1">Üst Çene (15-25)<span class="Apple-converted-space">    </span>: ${upperAld}[cite: 1, 2]</span></p>
+<p class="p1"><span class="s1">Alt Çene (45-35)<span class="Apple-converted-space">    </span>: ${lowerAld}[cite: 1, 2]</span></p>
+<p class="p1"><span class="s1">==============================================`;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>const tempArea = document.createElement('textarea');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>tempArea.value = reportText;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.body.appendChild(tempArea);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>tempArea.select();</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>try {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>document.execCommand('copy');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>showToast("Rapor panoya kopyalandı!");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>} catch (err) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>showToast("Kopyalama başarısız oldu.");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>document.body.removeChild(tempArea);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+</body>
+</html>
